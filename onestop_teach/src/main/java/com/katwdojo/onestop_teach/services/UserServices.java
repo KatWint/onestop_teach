@@ -58,5 +58,12 @@ public class UserServices {
 		
 		return true;
 	}
+	
+	public User updateUser (User updateUser) {
+		String hashedPass=BCrypt.hashpw(updateUser.getPassword(), BCrypt.gensalt());
+		updateUser.setPassword(hashedPass);
+		userRepo.save(updateUser);
+		return null;
+	}
 
 }

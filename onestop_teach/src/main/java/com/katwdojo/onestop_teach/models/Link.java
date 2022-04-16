@@ -15,7 +15,6 @@ public class Link {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 	
-	private String image;
 	@NotBlank
 	private String name;
 	@NotBlank
@@ -32,12 +31,7 @@ public class Link {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getImage() {
-		return image;
-	}
-	public void setImage(String image) {
-		this.image = image;
-	}
+
 	public String getName() {
 		return name;
 	}

@@ -1,15 +1,20 @@
 package com.katwdojo.onestop_teach.models;
 
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+
 
 @Entity
 @Table(name="users")
@@ -35,6 +40,9 @@ public class User {
     @NotEmpty(message="Confirm Password is required!")
     @Size(min=8, max=128, message="Confirm Password must be between 8 and 128 characters")
     private String confirm;
+    
+    @OneToMany(mappedBy="user", fetch=FetchType.LAZY)
+    private List<Comment> userComment;
 
 	public Long getId() {
 		return id;
@@ -74,6 +82,14 @@ public class User {
 
 	public void setConfirm(String confirm) {
 		this.confirm = confirm;
+	}
+
+	public List<Comment> getUserComment() {
+		return userComment;
+	}
+
+	public void setUserComment(List<Comment> userComment) {
+		this.userComment = userComment;
 	}
     
     
