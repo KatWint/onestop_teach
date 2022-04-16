@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="/style.css">
 <title>Comment</title>
 </head>
-<body>
+<body class="input">
 <h1>Leave a comment</h1>
 <a href="/home">Home</a>
 <a href="/logout">Logout</a>

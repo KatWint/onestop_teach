@@ -13,11 +13,12 @@
 </head>
 <body>
 <a href="/logout">Logout</a>
-<h1>Welcome <c:out value="${loggedInUser.userName}"></c:out>!!!!</h1>
-<p>Here are the available resources, broken down by category.</p>
-<p>If you have a site that is not listed here and feel it would be helpful, please <a href="/link/new">Add link here</a></p>
+<h1 class="headline">Welcome <c:out value="${loggedInUser.userName}"></c:out>!!!!</h1>
+<p class="input">Here are the available resources, broken down by category.</p>
+<p class="input">If you have a site that is not listed here and feel it would be helpful, please <a href="/link/new">Add link here</a></p>
 <div>
-<p>Available Reading Sites:</p>
+<p class="headline">Available Reading Sites:</p>
+<img alt="books" src="https://cdn.pixabay.com/photo/2015/12/19/20/32/paper-1100254_960_720.jpg"><p class="input">The sites listed below focus on reading activities as well as read alouds for you and your students to enjoy</p>
   	<table class="table table-success table-striped">
       		<thead>
 				<tr>
@@ -39,7 +40,9 @@
 	</table>
 </div>
 <div>
-<p>Available Math Sites:</p>
+<p class="headline">Available Math Sites:</p>
+<img alt="math" src="https://cdn.pixabay.com/photo/2019/02/22/19/03/numbers-4014181_960_720.jpg"><p class="input">The sites listed below focus on math activities for your students to practice the skills introduced in class</p>
+
   	<table class="table table-success table-striped">
       		<thead>
 				<tr>
@@ -60,7 +63,9 @@
 	</table>
 </div>
 <div>
-<p>Available PreMade Worksheets Sites:</p>
+<p class="headline">Available PreMade Worksheets Sites:</p>
+<img alt="worksheets" src="https://cdn.pixabay.com/photo/2018/12/08/20/43/graphic-3863986_960_720.png">
+<p class="input">These sites are for worksheets premade in different categories that you can either print out or assign online(depending on the site)</p>
   	<table class="table table-success table-striped">
       		<thead>
 				<tr>
@@ -73,14 +78,16 @@
 				<c:forEach items="${worksheets}" var="worksheets">
 				<tr>
 					<td>${worksheets.name}</td>
-					<td><a href="${worksheets.link}">${worksheets.link}</a></td>					<td>${worksheets.description} </td>
+					<td><a href="${worksheets.link}">${worksheets.link}</a></td>					
+					<td>${worksheets.description} </td>
 				</tr>
 				</c:forEach>	
 			</tbody>
 	</table>
 </div>
 <div>
-<p>Available Writing Sites:</p>
+<p class="headline">Available Writing Sites:</p>
+<img alt="writing" src="https://cdn.pixabay.com/photo/2016/06/29/08/50/pencils-1486278_960_720.jpg"><p class="input">The sites listed below focus on writing activities, some online and some that can be implemented in the classroom</p>
   	<table class="table table-success table-striped">
       		<thead>
 				<tr>
@@ -100,8 +107,11 @@
 			</tbody>
 	</table>
 </div>
-<div>
+<div class="input">
 <p>Feedback and Thoughts</p>
+<img alt="thoughts" src="https://cdn.pixabay.com/photo/2016/03/31/21/37/bright-1296538_960_720.png">
+<p class="input">Please leave any feedback or thoughts with what is available here.</p>
+<p class="input">See what others have to say and add yours with the link at the bottom :)</p>
   	<table class="table table-success table-striped">
       		<thead>
 				<tr>

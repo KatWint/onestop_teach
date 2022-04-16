@@ -11,9 +11,8 @@
 <link rel="stylesheet" href="/style.css">
 <title>New Site</title>
 </head>
-<body>
+<body class="input">
 <h1>Thank you for adding more resources!</h1>
-<p>Once submitted, the link provided will be reviewed and displayed once approved</p>
 <a href="/home">Home</a>
 <a href="/logout">Logout</a>
 <form:form action="/addlink" method="post" modelAttribute="newLink">

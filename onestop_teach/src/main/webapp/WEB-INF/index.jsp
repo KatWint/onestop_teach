@@ -17,6 +17,7 @@
 	<p>All available sources are shown to registered users</p>
 	<p>Free to register and able to see a lot more!</p>
 </div>
+<div class="main">
 <div>
 <h1>Register</h1>
 <form:form action="/register" method="post" modelAttribute="newUser">
@@ -42,6 +43,8 @@
     </p>      
 	<button class="btn btn-primary">Submit</button>
 </form:form>
+</div>
+<div>
 <h1>Login</h1>
 <form:form action="/login" method="post" modelAttribute="newLogin">
     <p>
@@ -56,6 +59,7 @@
     </p>     
 	<button class="btn btn-primary">Submit</button>
 </form:form>
+</div>
 </div>
 </body>
 </html>

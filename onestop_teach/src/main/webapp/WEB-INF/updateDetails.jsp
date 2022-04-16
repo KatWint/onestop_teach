@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="/style.css">
 <title>My Comment</title>
 </head>
-<body>
+<body class="input">
 <h1>Update your comment</h1>
 <form:form action="/updatecomment/${oneComment.id}" method="put" modelAttribute="oneComment">
 	<p>
