@@ -25,6 +25,7 @@
 					<th>Title</th>
 					<th>Link</th>
 					<th>Description</th>
+					<th>Like it?</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -34,6 +35,9 @@
 					<td><a href="${reading.link}">${reading.link}</a>
 						</td>
 					<td>${reading.description} </td>
+					<td>${reading.likers.size()}
+					<a href="/link/${reading.id}/like">Like</a>
+					</td>
 				</tr>
 				</c:forEach>	
 			</tbody>
@@ -49,6 +53,7 @@
 					<th>Title</th>
 					<th>Link</th>
 					<th>Description</th>
+					<th>Like it?</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -57,6 +62,9 @@
 					<td>${mathematics.name}</td>
 					<td><a href="${mathematics.link}">${mathematics.link}</a></td>
 					<td>${mathematics.description} </td>
+					<td>${mathematics.likers.size()}
+					<a href="/link/${mathematics.id}/like">Like</a>
+					</td>
 				</tr>
 				</c:forEach>	
 			</tbody>
@@ -72,6 +80,7 @@
 					<th>Title</th>
 					<th>Link</th>
 					<th>Description</th>
+					<th>Like it?</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -80,6 +89,9 @@
 					<td>${worksheets.name}</td>
 					<td><a href="${worksheets.link}">${worksheets.link}</a></td>					
 					<td>${worksheets.description} </td>
+					<td>${worksheets.likers.size()}
+					<a href="/link/${worksheets.id}/like">Like</a>
+					</td>
 				</tr>
 				</c:forEach>	
 			</tbody>
@@ -94,6 +106,7 @@
 					<th>Title</th>
 					<th>Link</th>
 					<th>Description</th>
+					<th>Like it?</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -102,6 +115,9 @@
 					<td>${writing.name}</td>
 					<td><a href="${writing.link}">${writing.link}</a></td>
 					<td>${writing.description} </td>
+					<td>${writing.likers.size()}
+					<a href="/link/${writing.id}/like">Like</a>
+					</td>
 				</tr>
 				</c:forEach>	
 			</tbody>

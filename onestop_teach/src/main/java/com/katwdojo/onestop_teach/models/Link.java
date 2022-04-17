@@ -1,11 +1,18 @@
 package com.katwdojo.onestop_teach.models;
 
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+
 
 @Entity
 @Table(name="links")
@@ -25,6 +32,15 @@ public class Link {
 	private String category;
 	@NotBlank
 	private String approval;
+	
+	@ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+        name = "likes", 
+        joinColumns = @JoinColumn(name = "link_id"), 
+        inverseJoinColumns = @JoinColumn(name = "user_id")
+        )
+    private List<User> likers;
+	
 	public Long getId() {
 		return id;
 	}
@@ -62,4 +78,12 @@ public class Link {
 	public void setApproval(String approval) {
 		this.approval = approval;
 	}
+	public List<User> getLikers() {
+		return likers;
+	}
+	public void setLikers(List<User> likers) {
+		this.likers = likers;
+	}
+	
+	
 }

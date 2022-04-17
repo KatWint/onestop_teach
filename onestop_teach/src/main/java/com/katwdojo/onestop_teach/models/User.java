@@ -7,6 +7,9 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
@@ -14,6 +17,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+
 
 
 @Entity
@@ -43,6 +47,14 @@ public class User {
     
     @OneToMany(mappedBy="user", fetch=FetchType.LAZY)
     private List<Comment> userComment;
+    
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+        name = "likes", 
+        joinColumns = @JoinColumn(name = "user_id"), 
+        inverseJoinColumns = @JoinColumn(name = "link_id")
+        )
+    private List<Link> linksLiked;
 
 	public Long getId() {
 		return id;
@@ -90,6 +102,14 @@ public class User {
 
 	public void setUserComment(List<Comment> userComment) {
 		this.userComment = userComment;
+	}
+
+	public List<Link> getLinksLiked() {
+		return linksLiked;
+	}
+
+	public void setLinksLiked(List<Link> linksLiked) {
+		this.linksLiked = linksLiked;
 	}
     
     

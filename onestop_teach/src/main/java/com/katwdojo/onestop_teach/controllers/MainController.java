@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 
+import com.katwdojo.great_ideas.models.Idea;
 import com.katwdojo.onestop_teach.models.Comment;
 import com.katwdojo.onestop_teach.models.Link;
 import com.katwdojo.onestop_teach.models.LoginUser;
@@ -142,4 +143,14 @@ public class MainController {
 			return "redirect:/home";
 		}
 	}
+	
+	@GetMapping("/link/{id}/like")
+	public String likeProject(@PathVariable Long id, HttpSession session) {
+		Link link=linkServ.findbyID(id);
+		User user=(User)session.getAttribute("loggedInUser");
+		User liker=userServ.findById(user.getId());
+		linkServ.likeLink(link, liker);
+		return "redirect:/home";
+	}
+	
 }
